@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Dentist Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+</head>
+<body style="background-color:beige;">
+    <div class="mainhead">
+
+        <div class="navbar">
+            <ul>
+                <li><a href="/"><img src="{% static 'images/doc.png' %}"></a></li>
+                <li><a href="/">DENTAL CLINIC</a></li>
+                <div class="navbar-end">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Contact Us</a></li>
+                <li id="register"><a href="/register">Register/Log In</a></li>
+        </div>
+        <div><a href="/"><marquee behavior="scroll" direction="right">Click Here to Sign IN</marquee></a></div>
+        </ul>
+    </div>
+
+    </div>
+    <div class="container">
+        <div class="reg1">
+        </div>
+
+        <div class="reg2">
+            <table border="1">
+                <tr> <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>City</th> <th>Previous Procedures</th> </tr>
+                {% for user in users %}
+                <tr>
+                <td>
+                {{ user.FirstName }}
+                </td>
+                <td>
+                {{ user.LastName }}
+                </td>
+                <td>
+                {{ user.Email }}
+                </td>
+                <td>
+                {{ user.City }}
+                </td>
+                <td>
+                {{ user.PreviousProcedures}}
+                </td>
+                </tr>
+                {% endfor %}
+               </table>
+
+    </div>
+    </div>
+
+</body>
+</html>
